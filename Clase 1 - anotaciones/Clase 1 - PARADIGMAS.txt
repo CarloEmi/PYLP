@@ -1,0 +1,28 @@
+/PARADIGMAS DE LENGUAJES/
+
+página para descargar las imagenes en docker
+https://hub.docker.com/
+Instalación del entorno de trabajo
+https://github.com/CarloEmi/PYLP
+PASO A PASO:
+https://github.com/gpautsch/PYLP/blob/master/unidad_0/README.md
+iNSTALACION DE DOCKER:
+https://docs.docker.com/desktop/install/windows-install/
+Luego poner en la terminal:
+docker ps
+para poder observar todo lo que se instaló
+
+Hacer clic secundario en attach shell para poder ingresar a una
+carpeta y poder utilizar el lenguaje que tenga instalado
+Esto con DOCKER en la sección del VSCode.
+
+CONSULTAR EN AULA VIRTUAL, FORO INSTALACION DEL ENTORNO.
+
+Dentro de una semana o 15 días hay evaluación de cada unidad, de manera
+cronológica.
+
+En la seccion "PROJECTS" en github se puede observar un TRELLO
+Es decir se puede gestionar las actividades en esa sección.
+
+Colegios de informáticos de cordoba o rosario -dva-project leader-etc
+ver cuánto se cobra
