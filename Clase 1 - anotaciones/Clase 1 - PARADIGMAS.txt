@@ -1,28 +1,45 @@
 /PARADIGMAS DE LENGUAJES/
 
-página para descargar las imagenes en docker
+-página para descargar las imagenes en docker
 https://hub.docker.com/
-Instalación del entorno de trabajo
+-Instalación del entorno de trabajo
 https://github.com/CarloEmi/PYLP
-PASO A PASO:
+-PASO A PASO:
 https://github.com/gpautsch/PYLP/blob/master/unidad_0/README.md
-iNSTALACION DE DOCKER:
+-INSTALACION DE DOCKER:
 https://docs.docker.com/desktop/install/windows-install/
-Luego poner en la terminal:
+-Luego poner en la terminal:
 docker ps
-para poder observar todo lo que se instaló
+-para poder observar todo lo que se instaló
 
-Hacer clic secundario en attach shell para poder ingresar a una
+-Hacer clic secundario en attach shell para poder ingresar a una
 carpeta y poder utilizar el lenguaje que tenga instalado
 Esto con DOCKER en la sección del VSCode.
 
-CONSULTAR EN AULA VIRTUAL, FORO INSTALACION DEL ENTORNO.
+-CONSULTAR EN AULA VIRTUAL, FORO INSTALACION DEL ENTORNO.
 
-Dentro de una semana o 15 días hay evaluación de cada unidad, de manera
+-Dentro de una semana o 15 días hay evaluación de cada unidad, de manera
 cronológica.
 
-En la seccion "PROJECTS" en github se puede observar un TRELLO
+-En la seccion "PROJECTS" en github se puede observar un TRELLO
 Es decir se puede gestionar las actividades en esa sección.
 
-Colegios de informáticos de cordoba o rosario -dva-project leader-etc
-ver cuánto se cobra
+-Colegios de informáticos de cordoba o rosario -dva-project leader-etc
+ver cuánto se cobra.
+
+*Se vió la UNIDAD I: Programación concurrente
+
+-multiprogramación, sistemas con un unico procesador. los proceso deben compartir el tiempo de cómputo
+-Multiproceso, tengo varios procesadores, y es posible asignar diferentes tareas a través de ellos
+*Aclaración= aunque se disponga de procesadores para dividir las tareas, puede ocurrir que hayan mas tareas 
+que procesadores posibles para realizarlas. En éste caso, se podria utilizar la multiprogramación.
+Cada procesador puede tener varias tareas y varias unidades de cómputos al mismo tiempo.
+
+*Concurrencia -> multiprogramación pero no paralelismo.
+
+*Paralelismo-> ejecuta multples tareas en forma simultanea. da solución a una sola tarea
+de forma más rápida. (descomposición)-> tomar un problema y partirlo en diferentes partes
+para resolver de forma más eficiente
+
+*Concurrencia-> ejecuta y gestiona al mismo tiempo(pero no de manera simultanea)
+tiene un costo de HW inferior pero es más lento.
