@@ -1,0 +1,29 @@
+swipl
+?- consult('/home/gpautsch/Dropbox/ParaLengu/miCatedra/unidad_V/prolog/paises.pl').
+% /home/gpautsch/Dropbox/ParaLengu/miCatedra/unidad_V/prolog/paises.pl compiled 0.00 sec, 4 clauses
+true.
+
+?- es_un_pais('Chile').
+true.
+
+?- es_un_pais('China').
+false.
+
+?- es_un_pais(X).
+X = 'Argentina' .
+
+?- es_un_pais(X).
+X = 'Argentina' ;
+X = 'Uruguay' ;
+X = 'Chile'.
+
+?- es_un_pais(X), write(X), fail.
+ArgentinaUruguayChile
+false.
+
+?- es_un_pais(X), write(X), nl, fail.
+Argentina
+Uruguay
+Chile
+false.
+

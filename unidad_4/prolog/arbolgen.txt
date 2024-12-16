@@ -1,0 +1,29 @@
+----arbolGen.pl--------
+padre(clara,pedro).
+padre(pedro,jose).
+padre(ana,clara).
+padre(jose,clara).
+abuelo(X,Y) :- padre(X,Z) , padre(Z,Y).
+bisabuelo(X,Y) :- padre(X,Z) , abuelo(Z,Y).
+-----------------------
+
+swipl
+consult('./arbolgen.pl').
+padre(clara,X) , padre(X,jose).
+pedro
+
+-- Si queremos que nos devuelva si o no
+abuelo(X,Y) :- padre(X,Z) , padre(Z,Y).
+
+para probarlo
+abuelo(clara,pedro).
+
+para probar bisabuelo
+padre(ana,X) , padre(X,Y) , padre(Y,Z).
+X = clara,
+Y = pedro,
+Z = jose.
+
+Otra mas facil 
+padre(ana,X) , abuelo(X,Y).
+
