@@ -6,7 +6,7 @@ animal(4, 'Vaca', no, no, no, si, 4, 3, 1, 3, 2, 3, no, si, si, no, si, no, no, 
 animal(5, 'Delfin', no, si, no, si, 0, 2, 3, 2, 3, 5, no, si, si, no, no, no, no, si).
 
 % entorno(ID, Descripcion)
-entorno(1, 'Volador').
+%entorno(1, 'Volador').
 entorno(2, 'Acuatico').
 entorno(3, 'Terrestre').
 
@@ -43,7 +43,7 @@ caracteristica(5, no, si, no, si, no, si, no, no, no, 0, no, si, no, si, si, no)
 % animal_entorno(ID, EntornoID)
 animal_entorno(1, 2).  % Tiburon es acuático
 animal_entorno(2, 3).  % Gato es terrestre
-animal_entorno(3, 1).  % Aguila es volador
+%animal_entorno(3, 1).  % Aguila es volador
 animal_entorno(4, 3).  % Vaca es terrestre
 animal_entorno(5, 2).  % Delfin es acuático
 
@@ -83,25 +83,35 @@ clasificar_animal(Nombre, Categoria) :-
     categoria(CategoriaID, Categoria).
 
 preguntar_y_clasificar :-
-    writeln('¿El animal tiene escamas? (s/n)'),
-    read_line_to_string(user_input, EscamasRaw),
-    downcase_atom(EscamasRaw, Escamas),  % Convierte la respuesta a minúsculas
+    %Pulmones
     writeln('¿El animal tiene pulmones? (s/n)'),
     read_line_to_string(user_input, PulmonesRaw),
     downcase_atom(PulmonesRaw, Pulmones),  % Convierte la respuesta a minúsculas
+    %Patas
     writeln('¿Cuántas patas tiene el animal? (número)'),
     read_line_to_string(user_input, PatasString),
     atom_number(PatasString, Patas),
-    tomar_decision(Escamas, Pulmones, Patas).
+    %Escamas
+    writeln('¿El animal tiene escamas? (s/n)'),
+    read_line_to_string(user_input, EscamasRaw),
+    downcase_atom(EscamasRaw, Escamas),  % Convierte la respuesta a minúsculas
+    
+    tomar_decision(Pulmones, Patas, Escamas).
 
 
 
-tomar_decision('s', 'n', 0) :- % Si tiene escamas, no tiene pulmones y 0 patas
+% Clasificación de animales: acuático o terrestre
+tomar_decision('n', 0, 'n') :- % Si no tiene pulmones, 0 patas y no tiene escamas
     writeln('El animal es probablemente ACUÁTICO').
 
-tomar_decision('n', 's', Patas) :- % Si no tiene escamas, tiene pulmones y patas > 0
+tomar_decision('s', Patas, 'n') :- % Si tiene pulmones, patas > 0 y no tiene escamas
     Patas > 0,
     writeln('El animal es probablemente TERRESTRE').
 
+tomar_decision('n', Patas, 's') :- % Si no tiene pulmones, tiene escamas, y patas > 0
+    Patas > 0,
+    writeln('El animal es probablemente ACUÁTICO').
+%Evalúa el caso cuando el animal tiene escamas y patas. Esto cubre el caso de animales 
+%acuáticos que pueden tener patas (como los anfibios, como ranas, etc.).
 tomar_decision(_, _, _) :- % Para cualquier otra combinación
     writeln('No se pudo determinar con certeza el tipo de animal.').
