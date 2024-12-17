@@ -104,6 +104,9 @@ preguntar_y_clasificar :-
 tomar_decision('n', 0, 'n') :- % Si no tiene pulmones, 0 patas y no tiene escamas
     writeln('El animal es probablemente ACUÁTICO').
 
+tomar_decision('n', 0, 's') :- % Si no tiene pulmones, 0 patas y si tiene escamas
+    writeln('El animal es probablemente ACUÁTICO').
+
 tomar_decision('s', Patas, 'n') :- % Si tiene pulmones, patas > 0 y no tiene escamas
     Patas > 0,
     writeln('El animal es probablemente TERRESTRE').
